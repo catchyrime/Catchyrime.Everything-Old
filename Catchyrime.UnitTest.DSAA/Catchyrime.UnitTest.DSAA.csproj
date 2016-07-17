@@ -4,47 +4,36 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E22F622B-95E6-421C-88CB-B2688C3D7363}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{117BCBF1-096A-4F36-88CF-F68B8BEA3B2E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Catchyrime.Everything</RootNamespace>
-    <AssemblyName>Catchyrime.Everything</AssemblyName>
+    <RootNamespace>Catchyrime.UnitTest.DSAA</RootNamespace>
+    <AssemblyName>Catchyrime.UnitTest.DSAA</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Binary\Debug\</OutputPath>
+    <OutputPath>..\Binary\Debug\UnitTest\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>..\Binary\Debug\Catchyrime.Everything.xml</DocumentationFile>
-    <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Binary\Release\</OutputPath>
+    <OutputPath>..\Binary\Release\UnitTest\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Binary\Release\Catchyrime.Everything.xml</DocumentationFile>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <NoWarn>CS1591</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Catchyrime.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="PowerCollections">
+      <HintPath>..\Reference\PowerCollections\Binaries\PowerCollections.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,22 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constant.cs" />
-    <Compile Include="Developer\__Attributes\MethodAttributes.cs" />
-    <Compile Include="Developer\__Attributes\ParameterAttributes.cs" />
-    <Compile Include="Developer\__Validations\Comparables.cs" />
-    <Compile Include="Developer\__Validations\Objects.cs" />
-    <Compile Include="Developer\__Validations\Validations.cs" />
-    <Compile Include="DSAA\DSArray.cs" />
-    <Compile Include="DSAA\DSIncList.cs" />
-    <Compile Include="DSAA\DSMap.cs" />
-    <Compile Include="DSAA\SBTree.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="__Extensions\Enumerables.cs" />
+    <Compile Include="TestDSArray.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Catchyrime.pfx" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Catchyrime.Everything\Catchyrime.Everything.csproj">
+      <Project>{e22f622b-95e6-421c-88cb-b2688c3d7363}</Project>
+      <Name>Catchyrime.Everything</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
